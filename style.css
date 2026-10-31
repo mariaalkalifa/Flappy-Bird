@@ -1,0 +1,164 @@
+
+/* PAGE DESIGN */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#74d7ff, #d8f6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* GAME CONTAINER */
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px #333;
+}
+
+/* GAME SCREEN */
+#game {
+  position: relative;
+  width: 400px;
+  height: 550px;
+  max-width: 95vw;
+  background: linear-gradient(
+    #70c5ce 0%,
+    #a9e9f5 75%,
+    #ded895 75%,
+    #ded895 100%
+  );
+  border: 4px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* BIRD */
+#bird {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  left: 80px;
+  top: 220px;
+  background: #ffdf00;
+  border: 3px solid #e5a900;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+/* BIRD EYE */
+#bird::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  right: 4px;
+  top: 3px;
+}
+
+/* BIRD BEAK */
+#bird::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 9px;
+  background: orange;
+  border-radius: 3px;
+  right: -10px;
+  top: 14px;
+}
+
+/* PIPES */
+.pipe {
+  position: absolute;
+  width: 65px;
+  background: #45c72e;
+  border: 3px solid #248b18;
+  z-index: 3;
+}
+
+.top-pipe {
+  top: 0;
+}
+
+.bottom-pipe {
+  bottom: 0;
+}
+
+/* SCORE */
+#score {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px #333;
+  z-index: 10;
+}
+
+/* START AND GAME OVER SCREENS */
+#start-screen,
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px #5555;
+  z-index: 20;
+}
+
+#start-screen h2,
+#game-over h2 {
+  color: #333;
+  margin-bottom: 12px;
+}
+
+#start-screen p,
+#game-over p {
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+button {
+  padding: 12px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffcc00;
+  color: #333;
+  border: 3px solid #e6a800;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #ffea00;
+  transform: scale(1.05);
+}
+
+/* INSTRUCTIONS */
+.instructions {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
